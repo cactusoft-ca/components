@@ -213,13 +213,14 @@ export declare class DragDropRegistry<I, C extends {
     readonly pointerUp: Subject<TouchEvent | MouseEvent>;
     constructor(_ngZone: NgZone, _document: any);
     getDropContainer(id: string): C | undefined;
+    initializeDragging(drag: I, event: TouchEvent | MouseEvent): void;
     isDragging(drag: I): boolean;
     ngOnDestroy(): void;
     registerDragItem(drag: I): void;
     registerDropContainer(drop: C): void;
     removeDragItem(drag: I): void;
     removeDropContainer(drop: C): void;
-    startDragging(drag: I, event: TouchEvent | MouseEvent): void;
+    startDragging(drag: I): void;
     stopDragging(drag: I): void;
 }
 
